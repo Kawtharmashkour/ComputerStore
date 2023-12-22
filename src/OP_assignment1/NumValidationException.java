@@ -16,7 +16,7 @@ public class NumValidationException extends RuntimeException{
 	
 	
 	public static Double isNumeric(String str) {
-		// Handle empty string
+		// Handle empty string 
 		if (str == null || str.trim().isEmpty()) {
         
 			throw new NumValidationException("Error: No Input.");

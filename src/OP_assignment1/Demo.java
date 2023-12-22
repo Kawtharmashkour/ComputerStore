@@ -60,6 +60,7 @@ public class Demo {
 							InventoryException.isStorageFull(numOfPotentialInventory);
 							nNewEntries =  NumValidationException.isInteger(inputCheck());
 							InventoryException.isExceedMaxIntentory(nNewEntries);
+							InventoryException.isBelowMinIntentory(nNewEntries);
 							inventory.InputInventory(nNewEntries);
 							System.out.println("\n--- All Inventory ---");
 							inventory.toString();
@@ -178,7 +179,8 @@ public class Demo {
 
 		do  {
 				try {
-					input = sc.next();
+					//nextLine();is to handle press enter without input anything
+					input = sc.nextLine();
 					num = NumValidationException.isNumeric(input);
 					return num;
 				}catch(NumValidationException e) {

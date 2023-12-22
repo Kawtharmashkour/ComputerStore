@@ -21,6 +21,12 @@ public class InventoryException extends RuntimeException{
 		}
 	}
 	
+	public static void isBelowMinIntentory(int quantity) {
+		if(quantity < Inventory.getMinInventory()) {
+			throw new InventoryException("Error: Less than Min. inventory ("+ Inventory.getMinInventory()+").");
+		}
+	}
+	
 	public String getMessage() {
         return super.getMessage();
 }
